@@ -1,7 +1,22 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
+import javascriptLogo from './javascript.svg';
+import viteLogo from '/vite.svg';
+import { setupCounter } from './counter.js';
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').then(
+      function (registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful');
+      },
+      function (err) {
+        // Registration failed
+        console.log('ServiceWorker registration failed: ', err);
+      }
+    );
+  });
+}
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -19,6 +34,6 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
   </div>
-`
+`;
 
-setupCounter(document.querySelector('#counter'))
+setupCounter(document.querySelector('#counter'));
