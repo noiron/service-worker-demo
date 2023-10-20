@@ -27,7 +27,5 @@ self.addEventListener('fetch', async (event) => {
         });
       })
     );
-  } else {
-    return;
   }
 });
