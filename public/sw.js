@@ -7,7 +7,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', async (event) => {
-  if (event.request.destination === 'image') {
+  // if (event.request.destination === 'image') {
     // Open the cache
     event.respondWith(
       caches.open(cacheName).then((cache) => {
@@ -27,5 +27,5 @@ self.addEventListener('fetch', async (event) => {
         });
       })
     );
-  }
+  // }
 });
