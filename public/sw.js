@@ -1,6 +1,6 @@
 console.log('This message is from service worker file.');
 
-const cacheName = 'cache-name-v1';
+const cacheName = 'cache-name-v2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(cacheName));
